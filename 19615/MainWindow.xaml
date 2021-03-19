@@ -1,0 +1,12 @@
+﻿<Window x:Class="_19615.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_19615"
+        mc:Ignorable="d"
+        Title="Подай на 16" Height="770" Width="718" FontFamily="Tw Cen MT" Icon="Images/service_logo.ico" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid>
+        <Frame Source="ServiceList.xaml" NavigationUIVisibility="Hidden"/>
+    </Grid>
+</Window>
