@@ -1,0 +1,56 @@
+﻿<Window x:Class="_19615.ClientServiceRegForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:_19615"
+        mc:Ignorable="d"
+      Title="Запись клиента на услугу" WindowStartupLocation="CenterScreen" Height="382" Width="1079" FontFamily="Tw Cen MT" Icon="Images/service_logo.ico">
+    <Window.Resources>
+        <Style x:Key="MaskedTextBoxStyle"
+               TargetType="TextBox">
+            <Setter Property="Margin" Value="10,0,10,0" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+            <Setter Property="TextWrapping" Value="Wrap" />
+        </Style>
+        <DataTemplate x:Key="HeaderTemplate">
+            <StackPanel>
+                <TextBlock Text="{Binding}"
+                           TextWrapping="Wrap" />
+            </StackPanel>
+        </DataTemplate>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75*"/>
+            <RowDefinition Height="506*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="#FFFFFFE1"/>
+        <Label Content="Запись клиента на услугу" FontSize="30" VerticalAlignment="Center" FontWeight="Bold" BorderBrush="Black" Grid.Row="0"/>
+        <Image Margin="0,5,5,5" HorizontalAlignment="Right" Source="/Images/service_logo.png" Width="100" />
+
+        <StackPanel Grid.Row="1" Background="White">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Наименование:" FontFamily="Tw Cen MT" FontSize="30" Margin="0,0,0,20"/>
+                <TextBlock x:Name="textTitle" FontFamily="Tw Cen MT" FontSize="30" Margin="0,0,0,20" Width="851"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Длительность:" FontFamily="Tw Cen MT" FontSize="30" Margin="0,0,0,20"/>
+                <TextBlock x:Name="textDuration" FontFamily="Tw Cen MT" FontSize="30" Margin="0,0,0,20" Width="484"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <TextBlock Text="Список клиентов:" FontFamily="Tw Cen MT" FontSize="30"/>
+                <ComboBox x:Name="ListClient" ItemsSource="{Binding FirstName}" Width="431" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <TextBlock Text="Дата начала:" FontFamily="Tw Cen MT" FontSize="30"/>
+                <xctk:DateTimePicker Text="1" x:Name="datePicker" Width="276" FontFamily="Tw Cen MT" FontSize="30" Format="Custom" FormatString="dd.M.yyy HH:mm"/>
+            </StackPanel>
+            <Button x:Name="Reg" Content="Записать" FontFamily="Tw Cen MT" FontSize="30" Margin="0,0,0,10" Click="Reg_Click"/>
+            <Button x:Name="Cancel" Content="Отменить" FontFamily="Tw Cen MT" FontSize="30" Click="Cancel_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>
